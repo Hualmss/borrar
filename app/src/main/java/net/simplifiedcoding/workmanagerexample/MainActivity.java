@@ -53,13 +53,26 @@ public class MainActivity extends AppCompatActivity {
                 .setConstraints(constraints)
                 .build();
 
+        //--------------------PREGUNTA 4---------------------------
+
+        /*findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WorkManager.getInstance()
+                        .beginWith(Arrays.asList(request,request2,request3))//llamadas en paralelo
+                        .enqueue();
+            }
+        });*/
+
+
+        //--------------------PREGUNTA 5---------------------------
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 WorkManager.getInstance()
                         .beginWith(Arrays.asList(request))
                         .then(request2)
-                        .then(request3)
+                        .then(request3)//llamadas en secuencia
                         .enqueue();
             }
         });
